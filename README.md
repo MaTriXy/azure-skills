@@ -55,16 +55,22 @@ Before you install, make sure you have:
 
 ### GitHub Copilot CLI
 
+**Add the marketplace** (first time only):
+
+```
+/plugin marketplace add microsoft/azure-skills
+```
+
 **Install the plugin**:
 
 ```
-/plugin install azure@awesome-copilot
+/plugin install azure@azure-skills
 ```
 
 **Update the plugin**:
 
 ```
-/plugin update azure@awesome-copilot
+/plugin update azure@azure-skills
 ```
 
 ### VS Code
