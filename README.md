@@ -100,7 +100,7 @@ claude plugin install azure@azure-skills
 **Update the plugin**:
 
 ```bash
-claude plugin update azure
+claude plugin update azure@azure-skills
 ```
 
 ## Verify the installation
@@ -223,3 +223,4 @@ export AZURE_MCP_COLLECT_TELEMETRY=false
 ## Contribution
 
 This repository is automatically sync'ed from https://github.com/microsoft/GitHub-Copilot-for-Azure. If you would like to contribute to Azure skills, please open PR's there. Thank you!
+
