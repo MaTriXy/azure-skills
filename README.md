@@ -105,6 +105,18 @@ The Azure MCP extension will also install a companion extension that brings the 
 
 ### IntelliJ IDEA
 
+#### Prerequisites
+
+Before installing Azure skills in IntelliJ IDEA, ensure you have:
+- **Node.js 18+** installed on your system with `npx` available on your PATH
+- **Git** installed and accessible from the command line
+
+You can verify these prerequisites by running:
+```bash
+npx --version
+git --version
+```
+
 #### Step 1: Install GitHub Copilot Plugin
 
 1. Open IntelliJ IDEA
@@ -123,38 +135,21 @@ The Azure MCP extension will also install a companion extension that brings the 
 
 #### Step 3: Install Azure Skills
 
-You have two options to add Azure skills to your IntelliJ IDEA environment:
+1. Open a terminal or command prompt
+2. Run the following command to install Azure skills globally for GitHub Copilot:
 
-**Option A: Manual Installation (Recommended)**
-
-1. **Prerequisites**: Ensure Git is installed on your system
-2. **Clone the repository**: Open a terminal/command prompt and run:
    ```bash
-   git clone https://github.com/microsoft/azure-skills.git
+   npx skills add https://github.com/microsoft/azure-skills/tree/main/.github/plugins/azure-skills/skills -a github-copilot -g -y
    ```
 
-3. **Copy skills to the appropriate directory**:
+   **Command explanation:**
+   - `npx skills add` - Uses the skills CLI to add a new skills package
+   - The GitHub URL points to the Azure skills directory in this repository
+   - `-a github-copilot` - Specifies the skills are for GitHub Copilot
+   - `-g` - Installs the skills globally (available across all projects)
+   - `-y` - Automatically accepts prompts during installation
 
-   **On Windows:**
-   - Create directory: `%USERPROFILE%\.agents` (if it doesn't exist)
-   - Copy skills: 
-     ```cmd
-     xcopy /E /I azure-skills\skills %USERPROFILE%\.agents\skills
-     ```
-   
-   **On macOS/Linux:**
-   - Create directory: `~/.agents` (if it doesn't exist)
-   - Copy skills:
-     ```bash
-     cp -r azure-skills/skills ~/.agents/
-     ```
-
-   **Alternative directories**: You can also copy the skills to `~/.copilot` or `~/.claude` instead of `~/.agents`
-
-**Option B: Use VS Code Extension (If Available)**
-
-If you have VS Code installed with the Azure MCP extension (mentioned in the VS Code section above), the Azure skills are automatically added to your `~/.agents` directory and will be available in IntelliJ IDEA without additional setup.
-
+3. Wait for the installation to complete. You should see confirmation that the Azure skills have been successfully added.
 
 ## Verify the installation
 
