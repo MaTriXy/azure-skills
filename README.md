@@ -103,6 +103,54 @@ The Azure MCP extension will also install a companion extension that brings the 
 /plugin marketplace update azure-skills
 ```
 
+### IntelliJ IDEA
+
+#### Prerequisites
+
+Before installing Azure skills in IntelliJ IDEA, ensure you have:
+- **Node.js 18+** installed on your system with `npx` available on your PATH
+- **Git** installed and accessible from the command line
+
+You can verify these prerequisites by running:
+```bash
+npx --version
+git --version
+```
+
+#### Step 1: Install GitHub Copilot Plugin
+
+1. Open IntelliJ IDEA
+2. Go to **File** > **Settings** (on Windows/Linux) or **IntelliJ IDEA** > **Preferences** (on macOS)
+3. Navigate to **Plugins** in the left sidebar
+4. Search for "GitHub Copilot" in the Marketplace tab
+5. Install the [GitHub Copilot plugin](https://plugins.jetbrains.com/plugin/17718-github-copilot--your-ai-pair-programmer) (requires version 1.5.64-242 or higher)
+6. Restart IntelliJ IDEA when prompted
+
+#### Step 2: Enable Skills for GitHub Copilot
+
+1. Open IntelliJ IDEA settings/preferences again
+2. Navigate to **Tools** > **GitHub Copilot** > **Chat**
+3. Check the **"Enable Skills"** checkbox
+4. Click **Apply** and **OK**
+
+#### Step 3: Install Azure Skills
+
+1. Open a terminal or command prompt
+2. Run the following command to install Azure skills globally for GitHub Copilot:
+
+   ```bash
+   npx skills add https://github.com/microsoft/azure-skills/tree/main/.github/plugins/azure-skills/skills -a github-copilot -g -y
+   ```
+
+   **Command explanation:**
+   - `npx skills add` - Uses the skills CLI to add a new skills package
+   - The GitHub URL points to the Azure skills directory in this repository
+   - `-a github-copilot` - Specifies the skills are for GitHub Copilot
+   - `-g` - Installs the skills globally (available across all projects)
+   - `-y` - Automatically accepts prompts during installation
+
+3. Wait for the installation to complete. You should see confirmation that the Azure skills have been successfully added.
+
 ## Verify the installation
 
 After install, try three quick checks.
